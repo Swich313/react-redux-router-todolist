@@ -72,6 +72,7 @@ const todoSlice = createSlice({
         setTodosTotalQuantity: (state, action) => {state.todosTotalQuantity = action.payload},
         setFilteredTodosQuantity: (state, action) => {state.filteredTodosQuantity = action.payload},
         setTodos: (state, action) => {state.todos = action.payload},
+        addTodo: (state, action) => {state.todos.push(action.payload)},
         changeTodo: (state, action) => {
             const {id, changeType} = action.payload;
             const changeStatus =  state.todos.find(item => item._id === id)[action.payload.changeType];
@@ -116,6 +117,7 @@ export const {
     incrementCurrentPage,
     decrementCurrentPage,
     changeTodo,
+    addTodo,
     setTodosTotalQuantity,
     setFilteredTodosQuantity,
     setTodos,

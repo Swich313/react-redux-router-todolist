@@ -1,0 +1,128 @@
+.form {
+  font-size: 22px;
+  text-align: center;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.18);
+}
+.form div {
+  margin: 1rem;
+  padding: 0.5rem;
+  position: relative;
+}
+.form div[data-error=true]::after {
+  content: "Invalid title!";
+  position: absolute;
+  color: #b40e0e;
+  top: 90%;
+  left: 25%;
+  min-width: 150px;
+  font-size: 18px;
+}
+.form div input, .form div textarea {
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  font-size: 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+}
+.form div input:focus-visible, .form div textarea:focus-visible {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.form div label {
+  margin-bottom: 0.5rem;
+}
+.form div select {
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  font-size: 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  appearance: none;
+}
+.form div select:focus-visible {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.form .btn {
+  font-size: 16px;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  padding: 6px 12px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  position: relative;
+  z-index: 0;
+}
+.form .btn:before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 0.25rem;
+}
+.form .btn:active {
+  color: #86b7fe;
+  opacity: 0.8;
+}
+.form .btn:active:after {
+  background: transparent;
+}
+.form .btn:hover:before {
+  opacity: 1;
+}
+.form .btn:hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #86b7fe;
+  opacity: 0.8;
+  left: 0;
+  top: 0;
+  border-radius: 0.25rem;
+}
+.form .btn[disabled] {
+  cursor: not-allowed;
+  background-color: var(--color-gray-300);
+  color: var(--color-gray-800);
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.invalid input, .invalid textarea {
+  border: 1px solid #b40e0e;
+  background-color: #fddddd;
+}
+.invalid input:focus, .invalid textarea:focus {
+  border-color: red;
+  background-color: #fbe8d2;
+}
+
+.error_text {
+  color: #b40e0e;
+}
+
+/*# sourceMappingURL=TodoAddForm.module.css.map */

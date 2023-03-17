@@ -1,8 +1,7 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import RootLayout from "./pages/Root.jsx";
-import HomePage from "./pages/Home.jsx";
-// import HomePage, {action as createTodoAction} from "./pages/Home.jsx";
+import HomePage, {action as createTodoAction} from "./pages/Home.jsx";
 import ErrorPage from "./pages/Error";
 import AuthPage from "./pages/Auth";
 import CalendarPage from "./pages/Calendar";
@@ -17,7 +16,7 @@ const router = createBrowserRouter([
         id: 'root',
         children: [
             // {index: true, element: <HomePage />,},
-            {index: true, element: <HomePage />,},
+            {index: true, element: <HomePage />, action: createTodoAction},
             {path: 'auth', element: <AuthPage />},
             {path: 'calendar', element: <CalendarPage />}
             // {path: 'logout', action: logoutAction},

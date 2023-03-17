@@ -1,9 +1,18 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-
 import $api from '../utils/axiosFetcher.js';
 
+const DUMMY_FILTERS = [
+    {_id: 'f1', name: 'all', className: 'bg_all', type: 'default_filter'},
+    {_id: 'f2', name: 'work', className: 'bg_work', type: 'default_filter'},
+    {_id: 'f3', name: 'home', className: 'bg_home', type: 'default_filter'},
+    {_id: 'f4', name: 'hobby', className: 'bg_hobby', type: 'default_filter'},
+    {_id: 'f5', name: 'other', className: 'bg_other', type: 'default_filter'},
+    {_id: 'f6', name: 'done', className: 'bg_done', type: 'default_filter'},
+
+];
+
 const initialState = {
-    filters: [],
+    filters: DUMMY_FILTERS,
     activeFilter: 'all',
     filtersLoadingStatus: 'idle',
     isAddNewFilterMode: false,
@@ -28,7 +37,7 @@ const filterSlice = createSlice({
         changeActiveFilter: (state, action) => {state.activeFilter = action.payload},
         resetInputs: state => {state.isResetInputs = true},
         notResetInputs: state => {state.isResetInputs = false},
-
+        addFilter: (state, action) => {state.filters.push(action.payload) },
     },
     extraReducers: builder => {
         builder
@@ -41,6 +50,6 @@ const filterSlice = createSlice({
     }
 });
 
-export const {setActiveFilter, addNewFilterMode, closeAddNewFilterMode, changeActiveFilter, resetInputs, notResetInputs} = filterSlice.actions;
+export const {addFilter, setActiveFilter, addNewFilterMode, closeAddNewFilterMode, changeActiveFilter, resetInputs, notResetInputs} = filterSlice.actions;
 
 export default filterSlice.reducer;
