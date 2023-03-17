@@ -1,0 +1,31 @@
+.pages {
+  margin: 50px 0;
+  text-align: center;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.pages .page {
+  margin: 0 10px;
+  font-size: 16px;
+  border: 1px solid #000;
+  border-radius: 0.25em;
+  padding: 6px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.pages .page:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.pages .active_page {
+  border: 2px solid #000;
+  font-weight: bold;
+  background: #aeaba7;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.pages .invisible {
+  display: none;
+}
+
+/*# sourceMappingURL=Pagination.module.css.map */

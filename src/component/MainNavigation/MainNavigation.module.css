@@ -1,0 +1,35 @@
+.header {
+  max-width: 60rem;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+}
+
+.list a {
+  text-decoration: none;
+  color: var(--color-primary-400);
+  /* optional, to show hover effect on siblings*/
+  padding: 1rem;
+  border-radius: 0.2rem;
+  border: 1px solid grey;
+  background: #343a3f;
+  transition: all 0.5s;
+
+}
+
+.list a:hover,
+.list a.active {
+  color: var(--color-primary-800);
+  text-decoration: underline;
+}
+
+/* hover effect on siblings*/
+.list a:not(:hover) {
+  background: #aeaba7;
+}
